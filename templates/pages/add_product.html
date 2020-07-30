@@ -1,0 +1,134 @@
+{% extends 'pages/layout.html' %}
+{% block body %}
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Añadir Producto</h1>
+            {% include 'includes/_flashmsg.html' %}
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <form role="form" enctype=multipart/form-data class="" action="/admin_add_product"
+                                  method="post">
+                                <div class="form-group">
+                                    <label>Nombre del Producto</label>
+                                    <input class="form-control" required="required" name="name" placeholder="Ingrese el Nombre">
+                                </div>
+                                <div class="form-group">
+                                    <label>Precio</label>
+                                    <input class="form-control" required="required" name="price" placeholder="Ingrese el precio">
+                                </div>
+                                <div class="form-group">
+                                    <label>Descripción</label>
+                                    <textarea class="form-control" required="required" name="description" rows="3"
+                                              placeholder="Escriba la descripción del producto"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>Disponible</label>
+                                    <input class="form-control" required="required" name="available" placeholder="Disponibles">
+                                </div>
+                                <div class="form-group">
+                                    <label>Categoria</label>
+                                    <select class="form-control" id="category_id" onchange="populateList();"
+                                            name="category">
+                                        <option value="play">Play Station 4</option>
+                                        <option value="xbox">Xbox</option>
+                                        <option value="videojuegops4">Videojuego ps4</option>
+                                        <option value="Videojuegoxbox">Videojuego Xbox</option>
+                                    </select>
+                                </div>
+                                <div class="form-group level-container">
+                                    <label>level for T-shirt</label>
+                                    <div class="form-group">
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" name="play" value="v_shape">V-Shape
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" name="play" value="polo">Polo T-shirt
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" name="play" value="clean_text">Clean Text
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" name="play" value="design">Colorful Design
+                                        </label>
+                                    </div>
+                                    <label>Level for xbox</label>
+                                    <div class="form-group">
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" name="xbox" value="chain">Chain
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" name="xbox" value="leather">Leather
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" name="xbox" value="design">Design
+                                        </label>
+                                    </div>
+                                    <label>Level for videojuegops4</label>
+                                    <div class="form-group">
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" name="videojuegops4" value="leather">Leather
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" name="videojuegops4" value="hook">Hook
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" name="videojuegops4" value="color">Color
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" name="videojuegops4" value="design">Design
+                                        </label>
+                                    </div>
+                                    <label>Level for Videojuegoxbox</label>
+                                    <div class="form-group">
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" name="Videojuegoxbox" value="formal">Formal
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" name="Videojuegoxbox" value="converse">Converse
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" name="Videojuegoxbox" value="loafer">Loafer
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" name="Videojuegoxbox" value="leather">Leather
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Artículo</label>
+                                    <input class="form-control" required="required" name="item" placeholder="Ej: PS4/Xbox">
+                                </div>
+                                <div class="form-group">
+                                    <label>Código del Producto</label>
+                                    <input class="form-control" required="required" name="code" placeholder="Ingrese el Código">
+                                </div>
+                                <div class="form-group">
+                                    <label>Añadir Imagen</label>
+                                    <input type="file" required="required" name="picture">
+                                </div>
+                                <button type="submit" class="btn btn-default">Enviar </button>
+                            </form>
+                        </div>
+                        <!-- /.col-lg-6 (nested) -->
+                    </div>
+                    <!-- /.row (nested) -->
+                </div>
+                <!-- /.panel-body -->
+            </div>
+            <!-- /.panel -->
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /#page-wrapper -->
+{% endblock %}
